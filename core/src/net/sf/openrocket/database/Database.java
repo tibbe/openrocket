@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Spliterator;
 
 import net.sf.openrocket.database.DatabaseListener;
 
@@ -125,5 +126,10 @@ public class Database<T extends Comparable<T>> extends AbstractSet<T> {
 			iterator.remove();
 			fireRemoveEvent(current);
 		}
+	}
+
+	@Override
+	public Spliterator<T> spliterator() {
+		return super.spliterator();
 	}
 }
