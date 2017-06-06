@@ -2,7 +2,6 @@ package net.sf.openrocket.aerodynamics;
 
 import java.util.AbstractSet;
 import java.util.Iterator;
-import java.util.Spliterator;
 
 import net.sf.openrocket.util.ArrayList;
 import net.sf.openrocket.util.BugException;
@@ -55,11 +54,6 @@ public class WarningSet extends AbstractSet<Warning> implements Cloneable, Monit
 		return true;
 	}
 	
-	@Override
-	public Spliterator<Warning> spliterator() {
-		return (Spliterator<Warning>) super.spliterator();
-	}
-
 	/**
 	 * Add a <code>Warning</code> with the specified text to the set.  The Warning object
 	 * is created using the {@link Warning#fromString(String)} method.  If a warning of the
